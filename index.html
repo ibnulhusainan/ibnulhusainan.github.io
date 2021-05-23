@@ -14,24 +14,7 @@
 		    return String.fromCharCode('0x' + p1);
 		}));
 	    }
-	    fetch("process.php",{
-		body:
-		  {
-		    transaction_details: {
-		      order_id: "order-csb-" + Math.random(),
-		      gross_amount: 10000
-		    },
-		    credit_card: {
-		      secure: true
-		    },
-		    customer_details: {
-		      first_name: "Johny",
-		      last_name: "Kane",
-		      email: "testmidtrans@mailnesia.com",
-		      phone: "08111222333"
-		    }
-		  }
-	      }).then( snapResponse => { 
+	    fetch("process.php").then( snapResponse => { 
 		  console.log("Retrieved snap token:", snapResponse);
 		})
 	</script>
