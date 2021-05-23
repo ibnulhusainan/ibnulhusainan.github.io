@@ -14,16 +14,15 @@
 		    return String.fromCharCode('0x' + p1);
 		}));
 	    }
-	    fetch("https://app.sandbox.midtrans.com/snap/v1/transactions",{
+	    fetch("process.php",{
 		method: "post",
 		headers: {
 		  "Content-Type": "application/json",
 		  Accept: "application/json",
 		  Authorization:
-		    "Basic " + u2b("SB-Mid-server-GwUP_WGbJPXsDzsNEBRs8IYA")
+		    "Basic " + u2b("SB-Mid-server-CyKGMYV99Y-uQX8Cdhnewuxy")
 		},
 		body:
-		  // Below is the HTTP request body in JSON
 		  {
 		    transaction_details: {
 		      order_id: "order-csb-" + Math.random(),
@@ -40,10 +39,8 @@
 		    }
 		  }
 	      }).then( snapResponse => { 
-		  let snapToken = snapResponse.data.token;
-		  console.log("Retrieved snap token:", snapToken);
+		  console.log("Retrieved snap token:", snapResponse);
 		})
-
 	</script>
 </body>
 </html>
